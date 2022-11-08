@@ -1,0 +1,21 @@
+TTP_PORT = 8080
+MAX_CONNECTIONS_ALLOWED = 10
+MAX_THREADS_ALLOWED = 10
+BUFFER_SIZE = 2048
+BITS_FOR_P_AND_Q = 1024
+TIME_OUT = 10
+
+LOGIN = "LOGIN"
+REGISTER = "REGISTER"
+GET = "GET"
+RESPONSE = "RESPONSE"
+BAD_REQUEST = "Bad Request"
+OK = "OK"
+GENERATE = "GENERATE"
+REVOCATE = "REVOCATE"
+SET = "SET"
+KEY = "KEY"
+ADDRESS = "ADDRESS"
+
+# CONNECTION_URI = "mongodb+srv://ttp:E7pblipH8pja54w4@cluster0.2x9fuhk.mongodb.net/?retryWrites=true&w=majority"
+CONNECTION_URI = "mongodb://localhost:27017"
