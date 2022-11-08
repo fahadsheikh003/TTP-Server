@@ -32,7 +32,6 @@ class TTP:
         executor = ThreadPoolExecutor(max_workers=MAX_THREADS_ALLOWED)
         while True:
             client_socket, client_address = self.__sock.accept()
-            print(f"Request Received from {client_address[0]}:{client_address[1]}")
             executor.submit(self.handle_request, client_socket, client_address)
 
     def handle_login(self, client_socket: socket, cipher: Fernet, credentials: tuple):
@@ -276,8 +275,13 @@ class TTP:
         cipher = Fernet(key)
 
         lines, data_message = self.receive_message(client_socket, cipher)
+        
+        print(f"Request Received from {client_address[0]}:{client_address[1]}")
         print("\n".join(lines))
-        print(data_message)
+        print(data_message, end='\n\n')
+
+        with open(LOG_FILE, 'a') as f:
+            f.write(f"{client_address[0]}\t{lines[0]}\t{data_message}\n")
 
         match lines[0].split()[0]:
             case "LOGIN":

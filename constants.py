@@ -23,3 +23,5 @@ FERNET_KEYSIZE = 32
 
 # CONNECTION_URI = "mongodb+srv://ttp:E7pblipH8pja54w4@cluster0.2x9fuhk.mongodb.net/?retryWrites=true&w=majority"
 CONNECTION_URI = "mongodb://localhost:27017"
+
+LOG_FILE = "log.txt"
