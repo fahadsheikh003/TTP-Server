@@ -314,6 +314,7 @@ class TTP:
                         params = data_message.split('&')
                         self.handle_get_ip_and_port(client_socket, cipher, (params[0][9:], params[1][9:]), params[2][10:])
 
+        client_socket.shutdown(SHUT_RDWR)
         client_socket.close()
 
 ttp = TTP()
